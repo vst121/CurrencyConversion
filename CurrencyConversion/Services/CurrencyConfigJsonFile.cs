@@ -25,7 +25,6 @@ namespace CurrencyConversion.Services
         {
             List<Tuple<string, string, double>> conversionRates = new List<Tuple<string, string, double>> { };
 
-            int i = 1;
             try
             {
                 List <CurrencyRateDto> currencyRateList = _configuration.GetSection("Currencies").Get<List<CurrencyRateDto>>();
