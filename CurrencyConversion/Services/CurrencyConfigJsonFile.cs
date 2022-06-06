@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CurrencyConversion.Dto;
 using Microsoft.Extensions.Configuration;
 
 
@@ -22,26 +23,16 @@ namespace CurrencyConversion.Services
         /// </summary> 
         public IEnumerable<Tuple<string, string, double>> InitConfigJsonFile()
         {
-            string currenyNth = "ConversionCurrency1";
-            string fromCurrency, toCurrency;
-            double rate;
-
             List<Tuple<string, string, double>> conversionRates = new List<Tuple<string, string, double>> { };
 
             int i = 1;
             try
             {
-                while (_configuration.GetSection(currenyNth).GetSection("FromCurrency").Value is not null)
+                List <CurrencyRateDto> currencyRateList = _configuration.GetSection("Currencies").Get<List<CurrencyRateDto>>();
+                foreach (var currencyRate in currencyRateList)
                 {
-                    fromCurrency = _configuration.GetSection(currenyNth).GetSection("FromCurrency").Value;
-                    toCurrency = _configuration.GetSection(currenyNth).GetSection("ToCurrency").Value;
-                    rate = System.Convert.ToDouble(_configuration.GetSection(currenyNth).GetSection("Rate").Value);
-
-                    conversionRates.Add(new Tuple<string, string, double>(fromCurrency, toCurrency, rate));
-
-                    i++;
-                    currenyNth = "ConversionCurrency" + i;
-                }
+                    conversionRates.Add(new Tuple<string, string, double>(currencyRate.FromCurrency, currencyRate.ToCurrency, currencyRate.Rate));
+                } 
             }
             catch
             {

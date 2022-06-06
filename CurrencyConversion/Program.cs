@@ -25,7 +25,7 @@ namespace CurrencyConversion
 
                  configuration
                      .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-                     .AddJsonFile("currencysettingsX.json", optional: true, reloadOnChange: true);
+                     .AddJsonFile("currencysettings.json", optional: true, reloadOnChange: true);
 
                  IConfigurationRoot configurationRoot = configuration.Build();
               })
