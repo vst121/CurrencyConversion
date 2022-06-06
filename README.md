@@ -1,4 +1,4 @@
-# Currency Conversion
+# CurrencyConversion
 
 ## Description
 
