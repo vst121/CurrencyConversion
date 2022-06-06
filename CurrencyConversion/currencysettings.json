@@ -1,0 +1,47 @@
+{
+  "ConversionCurrency1": {
+    "FromCurrency": "USD",
+    "ToCurrency": "EUR",
+    "Rate": "0.93"
+  },
+  "ConversionCurrency2": {
+    "FromCurrency": "USD",
+    "ToCurrency": "CAD",
+    "Rate": "1.26"
+  },
+  "ConversionCurrency3": {
+    "FromCurrency": "CAD",
+    "ToCurrency": "RUB",
+    "Rate": "50.30"
+  },
+  "ConversionCurrency4": {
+    "FromCurrency": "CAD",
+    "ToCurrency": "GBR",
+    "Rate": "0.64"
+  },
+  "ConversionCurrency5": {
+    "FromCurrency": "EUR",
+    "ToCurrency": "QAR",
+    "Rate": "3.90"
+  },
+  "ConversionCurrency6": {
+    "FromCurrency": "AUD",
+    "ToCurrency": "CAD",
+    "Rate": "0.91"
+  },
+  "ConversionCurrency7": {
+    "FromCurrency": "GBR",
+    "ToCurrency": "CHF",
+    "Rate": "1.20"
+  },
+  "ConversionCurrency8": {
+    "FromCurrency": "CHF",
+    "ToCurrency": "CAD",
+    "Rate": "1.31"
+  },
+  "ConversionCurrency9": {
+    "FromCurrency": "KWD",
+    "ToCurrency": "KRW",
+    "Rate": "4086.30"
+  }
+}

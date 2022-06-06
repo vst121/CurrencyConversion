@@ -1,0 +1,55 @@
+﻿@using CurrencyConversion.Models.ViewModels;
+@model PageViewModel;
+
+@{
+    ViewData["Title"] = "Check Singleton Pattern";
+}
+<h3>@ViewData["Title"]</h3>
+
+<p>In this Page we have access to Currency Converter, without calculating Rate Matrix, even in new instances.</p>
+
+<form method="post">
+    <p class="p-2">
+
+        <hr />
+
+        Amount:
+        <input type="text" name="Amount" id="Amount" value="1" />
+        &nbsp;&nbsp;
+        From Currency:
+        <select name="FromCurrency">
+            @{
+                foreach (var item in Model.Currencies)
+                {
+                    <option value="@item">@item</option>
+                }
+            }
+        </select>
+        &nbsp;&nbsp;
+        to Currency:
+        <select name="ToCurrency">
+            @{
+                foreach (var item in Model.Currencies)
+                {
+                    <option value="@item">@item</option>
+                }
+            }
+        </select>
+        &nbsp;&nbsp;
+        <input name="Amount" type="submit" asp-action="CalcRate" value="Calculate Rate" />
+    </p>
+    <p>
+        <h2 class="h-25">
+            @{ if (Model.CalculatedAmount is not null)
+                {
+                    <span>
+                        @Model.Amount &nbsp;&nbsp; @Model.FromCurrency &nbsp;&nbsp;
+                        =
+                        &nbsp;&nbsp; @Model.CalculatedAmount  &nbsp;&nbsp; @Model.ToCurrency
+                    </span>
+                }
+            }
+        </h2>
+    </p>
+
+</form>
