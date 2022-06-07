@@ -52,9 +52,9 @@ namespace CurrencyConversion.Services
 
             int pos_i = -1, pos_j = -1;
 
-            pos_i = GetArrayIndex(fromCurrency);
-            pos_j = GetArrayIndex(toCurrency);
- 
+            pos_i = Array.IndexOf(AdjacentMatrix_Names, fromCurrency);
+            pos_j = Array.IndexOf(AdjacentMatrix_Names, toCurrency);
+         
             if (pos_i == -1 || pos_j == -1)
                 return double.NaN;
 
@@ -177,21 +177,6 @@ namespace CurrencyConversion.Services
                 finalRate = double.NaN;
 
             return finalRate;
-        }
-
-        /// <summary> 
-        /// Returns index of array for currency names. 
-        /// </summary> 
-        private int GetArrayIndex(string itemName)
-        {
-            int pos = -1;
-            for (int i = 0; i < graphCount; i++)
-            {
-                if (AdjacentMatrix_Names[i] == itemName)
-                    pos = i;
-            }
-
-            return pos;
         }
 
         /// <summary> 
