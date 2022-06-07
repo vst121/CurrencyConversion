@@ -1,16 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Configuration;
-
 
 namespace CurrencyConversion.Services
 {
     public class CurrencyConverter : ICurrencyConverter
     {
-        private IConfiguration _configuration;
         private static IEnumerable<Tuple<string, string, double>> _conversionRates;
         private static Dictionary<string, List<string>> _graph;
         private static string[] AdjacentMatrix_Names;
